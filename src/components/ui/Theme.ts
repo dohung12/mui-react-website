@@ -1,3 +1,4 @@
+/// <reference path="Theme.d.ts"/>
 import { createTheme } from '@mui/material/styles'
 
 const arcBlue = '#0B72B9'
@@ -32,35 +33,5 @@ const theme = createTheme({
     },
   },
 })
-
-declare module '@mui/material/styles' {
-  interface Palette {
-    blue: Palette['primary']
-    orange: Palette['primary']
-    arcGrey: Palette['primary']
-  }
-
-  // allow configuration using `createTheme`
-  interface PaletteOptions {
-    blue?: PaletteOptions['primary']
-    orange?: PaletteOptions['primary']
-    arcGrey?: PaletteOptions['primary']
-  }
-  interface TypographyVariants {
-    tab: React.CSSProperties
-  }
-
-  // allow configuration using `createTheme`
-  interface TypographyVariantsOptions {
-    tab?: React.CSSProperties
-  }
-}
-
-// Update the Typography's variant prop options
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    tab: true
-  }
-}
 
 export default theme
