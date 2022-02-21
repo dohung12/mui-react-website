@@ -22,6 +22,15 @@ const theme = createTheme({
       main: arcGrey,
     },
   },
+  typography: {
+    tab: {
+      fontFamily: 'Raleway',
+      color: '#fff',
+      textTransform: 'capitalize',
+      fontWeight: '700',
+      fontSize: '1rem',
+    },
+  },
 })
 
 declare module '@mui/material/styles' {
@@ -36,6 +45,21 @@ declare module '@mui/material/styles' {
     blue?: PaletteOptions['primary']
     orange?: PaletteOptions['primary']
     arcGrey?: PaletteOptions['primary']
+  }
+  interface TypographyVariants {
+    tab: React.CSSProperties
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    tab?: React.CSSProperties
+  }
+}
+
+// Update the Typography's variant prop options
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    tab: true
   }
 }
 
