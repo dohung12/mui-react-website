@@ -9,7 +9,7 @@ import {
   Button,
 } from '@mui/material'
 import logo from '../../assets/logo.svg'
-
+import { Outlet, Link } from 'react-router-dom'
 interface Props {
   children: React.ReactElement
 }
@@ -81,6 +81,7 @@ const Header = () => {
         </AppBar>
       </ElevationScroll>
       <Offset />
+      <Outlet />
     </React.Fragment>
   )
 }
