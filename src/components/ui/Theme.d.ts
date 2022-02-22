@@ -1,4 +1,4 @@
-import {} from '@mui/material/styles'
+import '@mui/material/styles'
 
 declare module '@mui/material/styles' {
   export interface Palette {
@@ -15,11 +15,13 @@ declare module '@mui/material/styles' {
   }
   interface TypographyVariants {
     tab: React.CSSProperties
+    estimate: React.CSSProperties
   }
 
   // allow configuration using `createTheme`
   export interface TypographyVariantsOptions {
     tab?: React.CSSProperties
+    estimate?: React.CSSProperties
   }
 }
 
@@ -27,5 +29,6 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Typography' {
   export interface TypographyPropsVariantOverrides {
     tab: true
+    estimate: true
   }
 }
