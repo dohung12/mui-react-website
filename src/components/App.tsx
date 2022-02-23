@@ -1,16 +1,16 @@
 import { ThemeProvider } from '@mui/material'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import About from './About'
-import Contact from './Contact'
-import CustomSoftware from './CustomSoftware'
-import Estimate from './Estimate'
-import Home from './Home'
-import MobileApps from './MobileApps'
-import Revolution from './Revolution'
-import Services from './Services'
+import About from './routes/About'
+import Contact from './routes/Contact'
+import CustomSoftware from './routes/CustomSoftware'
+import Estimate from './routes/Estimate'
+import Home from './routes/Home'
+import MobileApps from './routes/MobileApps'
+import Revolution from './routes/Revolution'
+import Services from './routes/Services'
+import Websites from './routes/Websites'
 import Header from './ui/Header/Header'
 import theme from './ui/Theme'
-import Websites from './Websites'
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -24,7 +24,7 @@ function App() {
             <Route path='contact' element={<Contact />}></Route>
             <Route path='custom-software' element={<CustomSoftware />}></Route>
             <Route path='estimate' element={<Estimate />}></Route>
-            <Route path='mobileapps' element={<MobileApps />}></Route>
+            <Route path='mobile-apps' element={<MobileApps />}></Route>
             <Route path='websites' element={<Websites />}></Route>
           </Route>
         </Routes>
