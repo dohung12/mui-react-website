@@ -7,7 +7,7 @@ import {
   Button,
 } from '@mui/material'
 import logo from '../../../assets/logo.svg'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import HeaderTabs from './Tabs'
 
 interface Props {
@@ -23,13 +23,12 @@ function ElevationScroll({ children }: Props) {
     elevation: trigger ? 4 : 0,
   })
 }
-
 const Offset = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
   marginBottom: '3em',
 }))
 const Logo = styled('img')({
-  height: '7em',
+  height: '8em',
 })
 const StyledButton = styled(Button)(({ theme }) => ({
   ...theme.typography.estimate,
@@ -46,7 +45,18 @@ const Header = () => {
       <ElevationScroll>
         <AppBar>
           <Toolbar disableGutters>
-            <Logo src={logo} alt='company logo' />
+            <Button
+              component={Link}
+              to='/'
+              sx={{
+                padding: 0,
+                '&hover': {
+                  backgroundColor: 'transparent',
+                },
+              }}
+            >
+              <Logo src={logo} alt='company logo' />
+            </Button>
             <HeaderTabs />
             <StyledButton variant='contained' color='secondary'>
               Free Estimate
