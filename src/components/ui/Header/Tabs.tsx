@@ -18,7 +18,7 @@ const ROUTES = [
   { name: 'Contact Us', link: '/contact', activeIndex: 4 },
 ]
 
-const ROUTE = ROUTES.reduce(
+const ROUTE_NAME = ROUTES.reduce(
   (initState, route) => [...initState, route.link],
   [] as string[]
 )
@@ -40,7 +40,7 @@ function HeaderTabs() {
   // This means that if you have nested routes like:
   // users, users/new, users/edit.
   // Then the order should be ['users/add', 'users/edit', 'users'].
-  const routeMatch = useRouteMatch(ROUTE)
+  const routeMatch = useRouteMatch(ROUTE_NAME)
   const currentTab = routeMatch?.pattern?.path
   return (
     <StyledTabs value={currentTab} indicatorColor='secondary'>
