@@ -26,7 +26,6 @@ const theme = createTheme({
   typography: {
     tab: {
       fontFamily: 'Raleway',
-      color: '#fff',
       textTransform: 'capitalize',
       fontWeight: '700',
       fontSize: '1rem',

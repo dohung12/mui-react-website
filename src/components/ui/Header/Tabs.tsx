@@ -42,12 +42,19 @@ function HeaderTabs() {
   // Then the order should be ['users/add', 'users/edit', 'users'].
   const routeMatch = useRouteMatch(ROUTE)
   const currentTab = routeMatch?.pattern?.path
-
   return (
-    <StyledTabs value={currentTab}>
+    <StyledTabs value={currentTab} indicatorColor='secondary'>
       {ROUTES.map((route) => {
         const { name, link } = route
-        return <StyledTab label={name} value={link} />
+
+        return (
+          <StyledTab
+            key={name}
+            label={name}
+            value={link}
+            isCurrentTab={link === currentTab}
+          />
+        )
       })}
     </StyledTabs>
   )
