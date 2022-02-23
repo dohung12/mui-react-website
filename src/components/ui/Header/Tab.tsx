@@ -6,6 +6,7 @@ interface PropsType {
   isCurrentTab: boolean
   ariaControl?: string
   ariaHasPopUp?: 'true' | undefined
+  ariaExpanded?: 'true' | undefined
   mouseOver?: any
 }
 
@@ -15,28 +16,29 @@ const StyledTab = ({
   isCurrentTab,
   ariaControl,
   ariaHasPopUp,
+  ariaExpanded,
   mouseOver,
-}: PropsType) => (
-  <Tab
-    component={Link}
-    aria-controls={ariaControl}
-    aria-haspopup={ariaHasPopUp}
-    aria-expanded={Boolean(ariaControl) ? 'true' : undefined}
-    onMouseOver={mouseOver}
-    // onClick={mouseOver}
-    label={label}
-    value={value}
-    to={value}
-    sx={{
-      typography: 'tab',
-      minWidth: 10,
-      marginLeft: '25px',
-      opacity: 1,
-      color: isCurrentTab ? 'secondary.main' : '#fff',
-      ':hover': {
-        color: 'black',
-      },
-    }}
-  ></Tab>
-)
+}: PropsType) => {
+  return (
+    <Tab
+      component={Link}
+      aria-controls={ariaControl}
+      aria-haspopup={ariaHasPopUp}
+      aria-expanded={ariaExpanded}
+      onMouseOver={mouseOver}
+      label={label}
+      value={value}
+      to={value}
+      sx={{
+        typography: 'tab',
+        minWidth: 10,
+        marginLeft: '25px',
+        color: isCurrentTab ? 'secondary.main' : '#fff',
+        ':hover': {
+          opacity: 1,
+        },
+      }}
+    ></Tab>
+  )
+}
 export default StyledTab
