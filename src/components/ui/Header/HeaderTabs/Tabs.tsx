@@ -1,8 +1,8 @@
-import { matchPath, useLocation, Link } from 'react-router-dom'
-import { Tabs, MenuItem } from '@mui/material'
+import { matchPath, useLocation } from 'react-router-dom'
+import { Tabs } from '@mui/material'
 import StyledTab from './Tab'
 import React, { useState } from 'react'
-import { StyledMenu } from './Menu.style'
+import TabsMenu from './Menu'
 
 const MENU_OPTIONS = [
   { name: 'Services', link: '/services' },
@@ -109,31 +109,14 @@ function HeaderTabs() {
           )
         })}
       </Tabs>
-      <StyledMenu
+      <TabsMenu
         id='services-menu'
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-          onMouseLeave: handleClose,
-        }}
-      >
-        {MENU_OPTIONS.map((option) => {
-          const { name, link } = option
-          return (
-            <MenuItem
-              component={Link}
-              key={name}
-              to={link}
-              onClick={handleClose}
-              selected={currentTab === link}
-            >
-              {name}
-            </MenuItem>
-          )
-        })}
-      </StyledMenu>
+        handleClose={handleClose}
+        menuOptions={MENU_OPTIONS}
+        currentTab={currentTab}
+      />
     </>
   )
 }
