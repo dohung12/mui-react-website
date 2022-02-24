@@ -1,8 +1,18 @@
 import React from 'react'
-import { StyledLogo } from './Header.style'
 import logoSrc from '../../../assets/logo.svg'
-import { Button } from '@mui/material'
+import { Button, styled } from '@mui/material'
 import { Link } from 'react-router-dom'
+
+const StyledLogo = styled('img')(({ theme }) => ({
+  height: '8em',
+  [theme.breakpoints.down('md')]: {
+    height: '7em',
+  },
+  [theme.breakpoints.down('sm')]: {
+    height: '5.5em',
+  },
+}))
+
 const Logo = () => {
   return (
     <Button

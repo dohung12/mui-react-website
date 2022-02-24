@@ -17,11 +17,13 @@ function ElevationScroll({ children }: Props) {
 const Offset = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
   marginBottom: '3em',
+  [theme.breakpoints.down('md')]: {
+    marginBottom: '2em',
+  },
+  [theme.breakpoints.down('sm')]: {
+    marginBottom: '1.25em',
+  },
 }))
-
-const StyledLogo = styled('img')({
-  height: '8em',
-})
 
 const EstimateButton = styled(Button)(({ theme }) => ({
   ...theme.typography.estimate,
@@ -32,4 +34,4 @@ const EstimateButton = styled(Button)(({ theme }) => ({
   color: '#fff',
 }))
 
-export { StyledLogo, EstimateButton, Offset, ElevationScroll }
+export { EstimateButton, Offset, ElevationScroll }

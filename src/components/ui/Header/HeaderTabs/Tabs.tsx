@@ -3,7 +3,7 @@ import { Tabs } from '@mui/material'
 import StyledTab from './Tab'
 import React, { useState } from 'react'
 import TabsMenu from './Menu'
-
+import { EstimateButton } from '../Header.style'
 const MENU_OPTIONS = [
   { name: 'Services', link: '/services' },
   {
@@ -117,6 +117,9 @@ function HeaderTabs() {
         menuOptions={MENU_OPTIONS}
         currentTab={currentTab}
       />
+      <EstimateButton variant='contained' color='secondary'>
+        Free Estimate
+      </EstimateButton>
     </>
   )
 }
