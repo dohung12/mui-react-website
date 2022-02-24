@@ -1,6 +1,6 @@
 import { AppBar, Toolbar } from '@mui/material'
 import { Outlet } from 'react-router-dom'
-import HeaderTabs from './Tabs'
+import HeaderTabs from './HeaderTabs/Tabs'
 import { ElevationScroll, EstimateButton, Offset } from './Header.style'
 import Logo from './Logo'
 const Header = () => {

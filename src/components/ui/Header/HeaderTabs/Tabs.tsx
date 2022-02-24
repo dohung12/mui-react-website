@@ -1,14 +1,10 @@
 import { matchPath, useLocation, Link } from 'react-router-dom'
-import { Tabs, styled, MenuItem } from '@mui/material'
+import { Tabs, MenuItem } from '@mui/material'
 import StyledTab from './Tab'
 import React, { useState } from 'react'
-import { StyledMenu } from './StyledMenu'
+import { StyledMenu } from './Menu.style'
 
-const StyledTabs = styled(Tabs)({
-  marginLeft: 'auto',
-})
-
-const menuOptions = [
+const MENU_OPTIONS = [
   { name: 'Services', link: '/services' },
   {
     name: 'Custom Software Development',
@@ -23,6 +19,26 @@ const menuOptions = [
     link: '/websites',
   },
 ]
+
+function getRoutes(
+  open: boolean,
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+) {
+  return [
+    { name: 'Home', link: '/' },
+    {
+      name: 'Services',
+      link: '/services',
+      ariaControl: open ? 'services-menu' : undefined,
+      ariaHasPopup: 'true',
+      ariaExpanded: open ? 'true' : undefined,
+      mouseOver: handleClick,
+    },
+    { name: 'The Revolution', link: '/revolution' },
+    { name: 'About Us', link: '/about' },
+    { name: 'Contact Us', link: '/contact' },
+  ]
+}
 
 function useRouteMatch(patterns: readonly string[]) {
   const { pathname } = useLocation()
@@ -40,40 +56,17 @@ function HeaderTabs() {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
   const open = Boolean(anchorEl)
 
-  const [selectedIndex, setSelectedIndex] = useState(0)
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(e.currentTarget)
-  }
-
-  const handleMenuItemClick = (
-    e: React.MouseEvent<HTMLElement>,
-    index: number
-  ) => {
-    setAnchorEl(null)
-    setSelectedIndex(index)
   }
 
   const handleClose = () => {
     setAnchorEl(null)
   }
 
-  const ROUTES = [
-    { name: 'Home', link: '/' },
-    {
-      name: 'Services',
-      link: '/services',
-      ariaControl: open ? 'services-menu' : undefined,
-      ariaHasPopup: 'true',
-      ariaExpanded: open ? 'true' : undefined,
-      mouseOver: handleClick,
-    },
-    { name: 'The Revolution', link: '/revolution' },
-    { name: 'About Us', link: '/about' },
-    { name: 'Contact Us', link: '/contact' },
-  ]
+  const routes = getRoutes(open, handleClick)
 
-  let ROUTE_NAME = [...ROUTES, ...menuOptions].reduce(
+  const routeName = [...routes, ...MENU_OPTIONS].reduce(
     (initState, route) => [...initState, route.link],
     [] as string[]
   )
@@ -82,13 +75,17 @@ function HeaderTabs() {
   // This means that if you have nested routes like:
   // users, users/new, users/edit.
   // Then the order should be ['users/add', 'users/edit', 'users'].
-  const routeMatch = useRouteMatch(ROUTE_NAME)
+  const routeMatch = useRouteMatch(routeName)
   const currentTab = routeMatch?.pattern?.path
 
   return (
     <>
-      <StyledTabs value={false} indicatorColor='secondary'>
-        {ROUTES.map((route) => {
+      <Tabs
+        value={false}
+        indicatorColor='secondary'
+        sx={{ marginLeft: 'auto' }}
+      >
+        {routes.map((route) => {
           const {
             name,
             link,
@@ -111,7 +108,7 @@ function HeaderTabs() {
             />
           )
         })}
-      </StyledTabs>
+      </Tabs>
       <StyledMenu
         id='services-menu'
         anchorEl={anchorEl}
@@ -122,16 +119,14 @@ function HeaderTabs() {
           onMouseLeave: handleClose,
         }}
       >
-        {menuOptions.map((option, index) => {
+        {MENU_OPTIONS.map((option) => {
           const { name, link } = option
           return (
             <MenuItem
               component={Link}
               key={name}
               to={link}
-              onClick={(e: React.MouseEvent<HTMLElement, MouseEvent>) =>
-                handleMenuItemClick(e, index)
-              }
+              onClick={handleClose}
               selected={currentTab === link}
             >
               {name}
