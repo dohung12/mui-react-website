@@ -1,22 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SwipeableDrawer, IconButton } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 
-interface Props {
-  open: boolean
-  setOpenDrawer: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const Drawer = ({ open, setOpenDrawer }: Props) => {
+const Drawer = () => {
   const iOS =
     typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent)
+  const [openDrawer, setOpenDrawer] = useState(false)
+
   return (
     <>
       <SwipeableDrawer
         disableBackdropTransition={!iOS}
         disableDiscovery={iOS}
-        open={open}
+        open={openDrawer}
         onClose={() => setOpenDrawer(false)}
         onOpen={() => setOpenDrawer(true)}
         anchor='left'
@@ -24,7 +21,7 @@ const Drawer = ({ open, setOpenDrawer }: Props) => {
         Example Drawer
       </SwipeableDrawer>
       <IconButton
-        onClick={() => setOpenDrawer(!open)}
+        onClick={() => setOpenDrawer(!openDrawer)}
         sx={{
           marginLeft: 'auto',
           '&.MuiIconButton-root': {
