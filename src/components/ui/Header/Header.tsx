@@ -4,6 +4,7 @@ import HeaderTabs from './HeaderTabs/Tabs'
 import { ElevationScroll, Offset } from './Header.style'
 import Logo from './Logo'
 import Drawer from './Drawer/Drawer'
+import Footer from '../Footer'
 
 const Header = () => {
   const theme = useTheme()
@@ -22,6 +23,7 @@ const Header = () => {
       {/* Offset use prevent header from cover below content */}
       <Offset />
       <Outlet />
+      <Footer></Footer>
     </>
   )
 }
