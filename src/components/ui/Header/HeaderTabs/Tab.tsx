@@ -34,6 +34,7 @@ const StyledTab = ({
         minWidth: 10,
         marginLeft: '25px',
         color: isCurrentTab ? 'secondary.main' : '#fff',
+        opacity: isCurrentTab ? 1 : 0.7,
         ':hover': {
           opacity: 1,
         },
