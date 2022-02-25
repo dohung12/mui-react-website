@@ -9,14 +9,14 @@ import MobileApps from './routes/MobileApps'
 import Revolution from './routes/Revolution'
 import Services from './routes/Services'
 import Websites from './routes/Websites'
-import Header from './ui/Header/Header'
+import PageLayout from './ui/PageLayout'
 import theme from './ui/Theme'
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Header />}>
+          <Route path='/' element={<PageLayout />}>
             <Route path='/' element={<Home />}></Route>
             <Route path='services' element={<Services />}></Route>
             <Route path='revolution' element={<Revolution />}></Route>
