@@ -1,8 +1,8 @@
 /// <reference path="Theme.d.ts"/>
 import { createTheme } from '@mui/material/styles'
 
-const arcBlue = '#0B72B9'
-const arcOrange = '#FFBA60'
+const arcBlue = '#0ea5e9'
+const arcOrange = '#f97316'
 const arcGrey = '#868686'
 
 const theme = createTheme({
