@@ -12,6 +12,7 @@ const StyledMenu = styled((props: MenuProps) => (
       vertical: 'top',
       horizontal: 'left',
     }}
+    keepMounted
     {...props}
   />
 ))(({ theme }) => ({
