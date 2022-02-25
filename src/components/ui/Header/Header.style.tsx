@@ -1,5 +1,6 @@
 import { useScrollTrigger, styled, Button } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 interface Props {
   children: React.ReactElement
@@ -25,13 +26,31 @@ const Offset = styled('div')(({ theme }) => ({
   },
 }))
 
-const EstimateButton = styled(Button)(({ theme }) => ({
-  ...theme.typography.estimate,
-  borderRadius: '50px',
-  marginLeft: '50px',
-  marginRight: '25px',
-  height: '45px',
-  color: '#fff',
-}))
+const EstimateButton = ({
+  link,
+  children,
+}: {
+  link: string
+  children: React.ReactNode
+}) => {
+  return (
+    <Button
+      variant='contained'
+      color='secondary'
+      component={Link}
+      to={link}
+      sx={{
+        typography: 'estimate',
+        borderRadius: '50px',
+        marginLeft: '50px',
+        marginRight: '25px',
+        height: '45px',
+        color: '#fff',
+      }}
+    >
+      {children}
+    </Button>
+  )
+}
 
 export { EstimateButton, Offset, ElevationScroll }

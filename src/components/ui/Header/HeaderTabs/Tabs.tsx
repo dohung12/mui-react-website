@@ -4,41 +4,7 @@ import StyledTab from './Tab'
 import React, { useState } from 'react'
 import TabsMenu from './Menu'
 import { EstimateButton } from '../Header.style'
-const MENU_OPTIONS = [
-  { name: 'Services', link: '/services' },
-  {
-    name: 'Custom Software Development',
-    link: '/custom-software',
-  },
-  {
-    name: 'iOS/Android App Development',
-    link: '/mobile-apps',
-  },
-  {
-    name: 'Website Development',
-    link: '/websites',
-  },
-]
-
-function getRoutes(
-  open: boolean,
-  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void
-) {
-  return [
-    { name: 'Home', link: '/' },
-    {
-      name: 'Services',
-      link: '/services',
-      ariaControl: open ? 'services-menu' : undefined,
-      ariaHasPopup: 'true',
-      ariaExpanded: open ? 'true' : undefined,
-      mouseOver: handleClick,
-    },
-    { name: 'The Revolution', link: '/revolution' },
-    { name: 'About Us', link: '/about' },
-    { name: 'Contact Us', link: '/contact' },
-  ]
-}
+import { MENU_OPTIONS, getRoutes } from '../../../Routes'
 
 function useRouteMatch(patterns: readonly string[]) {
   const { pathname } = useLocation()
@@ -117,9 +83,7 @@ function HeaderTabs() {
         menuOptions={MENU_OPTIONS}
         currentTab={currentTab}
       />
-      <EstimateButton variant='contained' color='secondary'>
-        Free Estimate
-      </EstimateButton>
+      <EstimateButton link='/estimate'>Free Estimate</EstimateButton>
     </>
   )
 }
