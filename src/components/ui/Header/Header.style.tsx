@@ -45,7 +45,10 @@ const EstimateButton = ({
         marginLeft: '50px',
         marginRight: '25px',
         height: '45px',
-        color: '#fff',
+        textAlign: 'center',
+        '&:hover': {
+          backgroundColor: 'secondary.light',
+        },
       }}
     >
       {children}

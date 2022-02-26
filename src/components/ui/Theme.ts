@@ -2,16 +2,20 @@
 import { createTheme } from '@mui/material/styles'
 
 const arcBlue = '#0284c7'
-const arcOrange = '#fb923c'
+const arcOrange = '#f9913b'
 const arcGrey = '#868686'
 
 const theme = createTheme({
   palette: {
     primary: {
       main: arcBlue,
+      light: '#5bb3fa',
+      dark: '#005896',
     },
     secondary: {
       main: arcOrange,
+      light: '#ffc26a',
+      dark: '#c16202',
     },
     blue: {
       main: arcBlue,
@@ -34,7 +38,7 @@ const theme = createTheme({
       fontFamily: 'Pacifico',
       fontSize: '1rem',
       textTransform: 'none',
-      color: '#111',
+      color: '#fff',
     },
     h2: {
       fontFamily: 'Raleway',
