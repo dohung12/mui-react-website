@@ -4,7 +4,7 @@ import LearnMoreButton from '../../../ui/LearnMoreBtn'
 
 const HeroTypography = () => {
   return (
-    <Grid item>
+    <Grid md={6} item>
       <Typography variant='h2' textAlign={'center'}>
         Bringing West Coast technology <br /> to the Midwest
       </Typography>

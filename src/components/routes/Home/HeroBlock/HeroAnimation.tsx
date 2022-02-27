@@ -12,12 +12,10 @@ const HeroAnimation = () => {
   }
   return (
     <Grid
-      md
+      md={3}
       item
       sx={{
-        minWidth: '21em',
         maxWidth: '50em',
-        marginLeft: '10%',
         marginTop: '2em',
         [theme.breakpoints.down('md')]: {
           maxWidth: '30em',
