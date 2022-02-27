@@ -1,9 +1,8 @@
 import React from 'react'
-import { Grid, Typography, Button, useTheme } from '@mui/material'
-import ArrowButton from '../../../ui/ArrowButton'
+import { Grid, Typography, Button } from '@mui/material'
+import LearnMoreButton from '../../../ui/LearnMoreBtn'
 
 const HeroTypography = () => {
-  const theme = useTheme()
   return (
     <Grid item>
       <Typography variant='h2' textAlign={'center'}>
@@ -12,7 +11,8 @@ const HeroTypography = () => {
       <Grid
         container
         spacing={2}
-        justifyContent={'center'}
+        justifyContent='center'
+        alignItems={'center'}
         sx={{
           marginTop: '1em',
         }}
@@ -33,21 +33,7 @@ const HeroTypography = () => {
           </Button>
         </Grid>
         <Grid item>
-          <Button
-            variant='outlined'
-            sx={{
-              borderWidth: 2,
-              borderRadius: '50px',
-              fontWeight: 'bold',
-            }}
-          >
-            <span style={{ marginRight: 10 }}>Learn More</span>
-            <ArrowButton
-              width={'15px'}
-              height={'15px'}
-              fill={theme.palette.primary.main}
-            ></ArrowButton>
-          </Button>
+          <LearnMoreButton link='' />
         </Grid>
       </Grid>
     </Grid>

@@ -19,9 +19,13 @@ const theme = createTheme({
     },
     blue: {
       main: arcBlue,
+      light: '#5bb3fa',
+      dark: '#005896',
     },
     orange: {
       main: arcOrange,
+      light: '#ffc26a',
+      dark: '#c16202',
     },
     arcGrey: {
       main: arcGrey,
@@ -46,6 +50,17 @@ const theme = createTheme({
       fontSize: '2.5rem',
       color: arcBlue,
       lineHeight: 1.5,
+    },
+    h4: {
+      fontFamily: 'Raleway',
+      fontWeight: '700',
+      fontSize: '1.75rem',
+      color: arcBlue,
+    },
+    subtitle1: {
+      fontSize: '1.25rem',
+      fontWeight: '300',
+      color: arcGrey,
     },
   },
 })
