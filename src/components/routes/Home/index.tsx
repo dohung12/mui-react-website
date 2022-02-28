@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, useTheme } from '@mui/material'
 import HeroBlock from './HeroBlock/'
 import ServicesBlock from './ServicesBlock/'
+import RevolutionBlock from './RevolutionBlock'
 
 const Home = () => {
   const theme = useTheme()
@@ -18,6 +19,7 @@ const Home = () => {
     >
       <HeroBlock />
       <ServicesBlock />
+      <RevolutionBlock />
     </Grid>
   )
 }
