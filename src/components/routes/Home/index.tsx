@@ -3,6 +3,7 @@ import { Grid, useTheme } from '@mui/material'
 import HeroBlock from './HeroBlock/'
 import ServicesBlock from './ServicesBlock/'
 import RevolutionBlock from './RevolutionBlock'
+import InformationBlock from './InformationBlock'
 
 const Home = () => {
   const theme = useTheme()
@@ -20,6 +21,7 @@ const Home = () => {
       <HeroBlock />
       <ServicesBlock />
       <RevolutionBlock />
+      <InformationBlock />
     </Grid>
   )
 }
