@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, useTheme } from '@mui/material'
-import { ArrowForward } from '@mui/icons-material'
+import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 
 interface Props {
@@ -9,7 +8,6 @@ interface Props {
 }
 
 const LearnMoreButton = ({ link, style }: Props) => {
-  const theme = useTheme()
   return (
     <Button
       variant='outlined'
@@ -17,19 +15,11 @@ const LearnMoreButton = ({ link, style }: Props) => {
       to={link}
       sx={{
         ...style,
-        borderWidth: 2,
-        borderRadius: '50px',
         fontWeight: 'bold',
+        margin: '2em',
       }}
     >
-      <span style={{ marginRight: 10 }}>Learn More</span>
-      <ArrowForward
-        sx={{
-          width: '15px',
-          height: '15px',
-          color: theme.palette.primary.main,
-        }}
-      ></ArrowForward>
+      <span>Learn More</span>
     </Button>
   )
 }
