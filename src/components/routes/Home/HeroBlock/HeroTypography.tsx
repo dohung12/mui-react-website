@@ -1,5 +1,5 @@
-import React from 'react'
-import { Grid, Typography, Button } from '@mui/material'
+import { EstimateButton } from './../../../ui/EstimateButton/index'
+import { Grid, Typography } from '@mui/material'
 import LearnMoreButton from '../../../ui/LearnMoreBtn'
 
 const HeroTypography = () => {
@@ -18,19 +18,7 @@ const HeroTypography = () => {
         }}
       >
         <Grid item>
-          <Button
-            variant='contained'
-            sx={{
-              typography: 'estimate',
-              backgroundColor: 'secondary.main',
-              borderRadius: '50px',
-              '&:hover': {
-                backgroundColor: 'secondary.light',
-              },
-            }}
-          >
-            Free Estimate
-          </Button>
+          <EstimateButton />
         </Grid>
         <Grid item>
           <LearnMoreButton link='' />
