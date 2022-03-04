@@ -1,20 +1,7 @@
 import React from 'react'
-import {
-  Grid,
-  Typography,
-  useTheme,
-  styled,
-  useMediaQuery,
-} from '@mui/material'
+import { Grid, Typography, useTheme, useMediaQuery } from '@mui/material'
 import mobileAppsIcon from '../../../../assets/mobileIcon.svg'
 import LearnMoreButton from '../../../ui/LearnMoreBtn'
-
-const StyledImg = styled('img')(({ theme }) => ({
-  marginLeft: '2em',
-  [theme.breakpoints.down('xs')]: {
-    marginLeft: 0,
-  },
-}))
 
 const MobileAppsBlock = () => {
   const theme = useTheme()
@@ -57,7 +44,13 @@ const MobileAppsBlock = () => {
           marginRight: matches ? '5em' : 0,
         }}
       >
-        <StyledImg alt='mobile phone icon' src={mobileAppsIcon} />
+        <img
+          alt='mobile phone icon'
+          src={mobileAppsIcon}
+          style={{
+            marginLeft: matches ? '2em' : 0,
+          }}
+        />
       </Grid>
     </Grid>
   )

@@ -34,6 +34,7 @@ const CustomSoftwareBlock = () => {
             style={{
               fontFamily: 'Pacifico',
               color: theme.palette.secondary.main,
+              marginLeft: '0.25rem',
             }}
           >
             celebration

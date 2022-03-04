@@ -53,7 +53,7 @@ const theme = createTheme({
     },
     h3: {
       fontFamily: 'Pacifico',
-      fontSize: '2.5rem',
+      fontSize: '2.2rem',
       color: arcBlue,
     },
     h4: {
