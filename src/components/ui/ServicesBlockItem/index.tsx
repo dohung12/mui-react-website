@@ -49,7 +49,16 @@ const ServicesBlockItem = ({ title, desc, image, link, style }: Props) => {
         </Grid>
         <LearnMoreButton link={link} />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <img src={image} alt={title + 'icon'} />
       </Grid>
     </Grid>
