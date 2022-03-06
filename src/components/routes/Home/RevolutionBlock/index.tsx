@@ -28,7 +28,7 @@ const RevolutionBlock = () => {
         sx={{
           alignItems: 'center',
           justifyContent: 'center',
-          height: '100em',
+          height: '100vh',
           marginTop: '12em',
         }}
       >

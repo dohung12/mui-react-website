@@ -23,7 +23,7 @@ const InformationBlock = () => {
         container
         direction={'row'}
         sx={{
-          height: '80em',
+          height: '100vh',
           alignItems: 'center',
           justifyContent: 'center',
         }}

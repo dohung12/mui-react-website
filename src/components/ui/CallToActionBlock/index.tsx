@@ -15,7 +15,7 @@ const BackgroundGrid = styled(Grid)(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   width: '100%',
-  height: '60em',
+  height: '100vh',
   alignItems: 'center',
   [theme.breakpoints.down('sm')]: {
     backgroundImage: `url(${mobileBackground})`,
