@@ -7,7 +7,14 @@ import TextBlock from '../../ui/TextBlock'
 const TechnologyBlock = () => {
   const { title, paragraph, animation } = TechnologyParagraph
   return (
-    <Grid item container spacing={4}>
+    <Grid
+      item
+      container
+      spacing={4}
+      sx={{
+        padding: { xs: '2rem', md: '5rem' },
+      }}
+    >
       <TextBlock title={title} paragraph={paragraph} xs={12} md={6} />
       <Grid item xs={12} md={6}>
         <Lottie
