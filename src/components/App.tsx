@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import About from './routes/About'
+import About from './routes/About/'
 import Contact from './routes/Contact'
 import CustomSoftware from './routes/CustomSoftware/'
 import Estimate from './routes/Estimate'
